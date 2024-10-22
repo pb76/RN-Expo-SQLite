@@ -30,7 +30,7 @@ export default function App() {
   };
 
   const writeData = async () => {
-    console.log(varde, intVarde);
+    //console.log(varde, intVarde);
     if (varde !== "" || intVarde !== 0) {
       const result = await db.execAsync(
         "INSERT INTO test (value, intValue) VALUES ('" + varde + "', " + intVarde + ")"
