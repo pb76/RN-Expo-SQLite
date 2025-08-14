@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet, Button, TextInput } from "react-native";
 import { getDatabase } from "../utils/database";
+import { sharedStyles } from "../styles/sharedStyles"; // Assuming styles are defined in a separate file
 
 export default function DeleteDB() {
   const [userId, setUserId] = useState(null);
@@ -25,8 +26,8 @@ export default function DeleteDB() {
   };
 
   return (
-    <View>
-      <Text>Delete Database</Text>
+    <View style={sharedStyles.card}>
+      <Text style={sharedStyles.title}>Delete Database</Text>
       <TextInput
         placeholder="Enter User ID to delete"
         keyboardType="numeric"

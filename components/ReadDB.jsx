@@ -1,6 +1,7 @@
 import { getDatabase } from "../utils/database";
 import { useEffect, useState } from "react";
 import { View, Text, StyleSheet, Button } from "react-native";
+import { sharedStyles } from "../styles/sharedStyles"; // Assuming styles are defined in a separate file
 
 export default function ReadDB() {
   const [users, setUsers] = useState([]);
@@ -16,8 +17,8 @@ export default function ReadDB() {
   };
 
   return (
-    <View>
-      <Text>Users List</Text>
+    <View style={sharedStyles.card}>
+      <Text style={sharedStyles.title}>Users List</Text>
       <Button title="Refresh" onPress={readData} />
       {users.length === 0 && <Text>No users found</Text>}
       {users.map((user) => (

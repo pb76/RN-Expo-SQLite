@@ -1,6 +1,7 @@
 import { View, Text, StyleSheet, Button, TextInput } from "react-native";
 import { getDatabase } from "../utils/database";
 import { useState } from "react";
+import { sharedStyles } from "../styles/sharedStyles"; // Assuming styles are defined in a separate file
 
 export default function WriteDB() {
   const [txtName, setTxtName] = useState("");
@@ -24,8 +25,8 @@ export default function WriteDB() {
   };
 
   return (
-    <View>
-      <Text>WriteDB Component</Text>
+    <View style={sharedStyles.card}>
+      <Text style={sharedStyles.title}>WriteDB Component</Text>
       <TextInput placeholder="Name" value={txtName} onChangeText={setTxtName} />
       <TextInput placeholder="Email" value={txtEmail} onChangeText={setTxtEmail} />
       <Button title="Write Data" onPress={writeData} />
