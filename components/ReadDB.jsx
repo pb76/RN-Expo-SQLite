@@ -22,7 +22,7 @@ export default function ReadDB() {
       {users.length === 0 && <Text>No users found</Text>}
       {users.map((user) => (
         <Text key={user.id}>
-          {user.name} - {user.email}
+          {user.id} - {user.name} - {user.email}
         </Text>
       ))}
     </View>
