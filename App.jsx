@@ -1,10 +1,12 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { ScrollView, Text, View } from "react-native";
 import { initDatabase } from "./utils/database";
 import { useEffect } from "react";
+import sharedStyles from "./styles/sharedStyles";
 import ReadDB from "./components/ReadDB";
 import WriteDB from "./components/WriteDB";
 import DeleteDB from "./components/DeleteDB";
+import UpdateDB from "./components/UpdateDB";
 
 export default function App() {
   useEffect(() => {
@@ -19,21 +21,13 @@ export default function App() {
   }, []);
 
   return (
-    <View style={styles.container}>
+    <ScrollView style={[sharedStyles.container, { marginTop: 40 }]}>
       <Text>Open up App.js to start working on your app!</Text>
       <WriteDB />
       <ReadDB />
       <DeleteDB />
+      <UpdateDB />
       <StatusBar style="auto" />
-    </View>
+    </ScrollView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
