@@ -4,6 +4,7 @@ import { initDatabase } from "./utils/database";
 import { useEffect } from "react";
 import ReadDB from "./components/ReadDB";
 import WriteDB from "./components/WriteDB";
+import DeleteDB from "./components/DeleteDB";
 
 export default function App() {
   useEffect(() => {
@@ -22,6 +23,7 @@ export default function App() {
       <Text>Open up App.js to start working on your app!</Text>
       <WriteDB />
       <ReadDB />
+      <DeleteDB />
       <StatusBar style="auto" />
     </View>
   );
