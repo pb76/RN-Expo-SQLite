@@ -35,7 +35,7 @@ export const initDatabase = async () => {
             );
         `);
     console.log("Database initialized successfully");
-    //console.log("Database path: ", db.databasePath);
+    console.log("Database path: ", db.databasePath);
   } catch (error) {
     console.error("Database initialization failed:", error);
     throw error;
